@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Product Bean -->
+    <bean id="product" class="com.mydemo.purchase.Product">
+        <constructor-arg value="101"/>
+        <constructor-arg value="Wireless Mouse"/>
+        <constructor-arg value="799.99"/>
+    </bean>
+
+    <!-- Purchase Bean: specify all constructor arguments manually -->
+    <bean id="purchase" class="com.mydemo.purchase.Purchase">
+        <constructor-arg value="1001"/> <!-- int -->
+        <constructor-arg>
+            <bean class="java.util.Date"/>
+        </constructor-arg>
+        <constructor-arg ref="product"/> <!-- reference to product bean -->
+    </bean>
+
+</beans>
