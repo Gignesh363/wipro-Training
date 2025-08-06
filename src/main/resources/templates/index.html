@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Static Resources Example</title>
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+    <script th:src="@{/js/somescript.js}" defer></script>
+</head>
+<body>
+    <h1>Welcome to Assignment 6</h1>
+    <p>This is a Spring Boot page demonstrating CSS, JavaScript, and image usage.</p>
+
+    <img th:src="@{/images/solar.png}" alt="Solar Image" width="300">
+
+    <button onclick="showMessage()">Click Me</button>
+</body>
+</html>
