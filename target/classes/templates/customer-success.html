@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer Registration Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        .success-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="success-container">
+    <h2>Customer Saved Successfully!</h2>
+    <p><strong>Name:</strong> <span th:text="${customer.name}"></span></p>
+    <p><strong>Email:</strong> <span th:text="${customer.email}"></span></p>
+    <p><strong>Age:</strong> <span th:text="${customer.age}"></span></p>
+    <p><strong>Gender:</strong> <span th:text="${customer.gender}"></span></p>
+    <p><strong>DOB:</strong> <span th:text="${#dates.format(customer.dob, 'yyyy-MM-dd')}"></span></p>
+    <p><strong>Phone:</strong> <span th:text="${customer.phone}"></span></p>
+</div>
+</body>
+</html>

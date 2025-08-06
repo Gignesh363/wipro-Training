@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer Form</title>
+    <style>.error { color: red; }</style>
+</head>
+<body>
+<h2>Customer Form</h2>
+
+<form th:action="@{/customer/save}" th:object="${customer}" method="post">
+
+    Name: <input type="text" th:field="*{name}"/>
+    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></p><br/>
+
+    Email: <input type="email" th:field="*{email}"/>
+    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></p><br/>
+
+    Age: <input type="number" th:field="*{age}"/>
+    <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></p><br/>
+
+    Gender:
+    <input type="radio" th:field="*{gender}" value="Male"/> Male
+    <input type="radio" th:field="*{gender}" value="Female"/> Female
+    <p th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class="error"></p><br/>
+
+    DOB: <input type="date" th:field="*{dob}"/>
+    <p th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}" class="error"></p><br/>
+
+    Phone: <input type="text" th:field="*{phone}"/>
+    <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="error"></p><br/>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
