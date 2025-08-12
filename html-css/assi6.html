@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .main {
+            border: 2px solid;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .main div {
+            width: 250px;
+            height: 250px;
+            text-align: center;
+        }
+
+        .main img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover; /* ensures the image fills without distortion */
+            border-radius: 8px;
+        }
+
+        h3 {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Image Gallery</h1>
+    <div class="main">
+        <div>
+            <img src="https://img.freepik.com/premium-photo/hand-drawn-cartoon-bag-rice-illustration-picture_561641-14917.jpg" alt="Basmati Rice">
+            <h3>Basmati Rice - 5Kg Bag</h3>
+        </div>
+        <div>
+            <img src="https://i.pinimg.com/originals/6a/ea/3b/6aea3b417a9349be202eeda916a30574.jpg" alt="Assorted Snacks">
+            <h3>Assorted Snacks</h3>
+        </div>
+        <div>
+            <img src="https://c8.alamy.com/comp/DRRY7H/cartoon-delivery-cargo-truck-DRRY7H.jpg" alt="Delivery Truck">
+            <h3>Delivery Truck</h3>
+        </div>
+        <div>
+            <img src="https://th.bing.com/th/id/OIP.mn5cUQyW2Ztjr5czlMZipgHaHa" alt="Books">
+            <h3>Books</h3>
+        </div>
+        <div>
+            <img src="https://img.favpng.com/2/6/11/floor-plan-house-design-storey-technical-drawing-png-favpng-CpiaV2kRKKc0NmqGVReg5kJQP.jpg" alt="House">
+            <h3>House</h3>
+        </div>
+        
+    </div>
+    <div style="margin-top: 25px;">
+            <label for="" style="margin-top: 25px;">Submit Lab</label>
+            <br>
+        <button style="background-color: blue;color: aliceblue;" style="margin-top: 25px;">submit</button>
+    </div>
+</body>
+</html>

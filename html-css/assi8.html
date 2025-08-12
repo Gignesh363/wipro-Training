@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .project{
+            display: flex;
+
+        }
+     
+       .sofa {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    position: relative;
+}
+        .sofa:hover {
+    background-color: brown;
+    color: white; 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+    z-index: 10; 
+}
+        .sofa img{
+            height: 60%;
+            width: 80%;
+            margin-left: 30px;
+
+        }
+        .sofa{
+            text-align: center;
+        }
+        .sofa button:hover
+        {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <h1 style="display:flex;justify-content: center;font-family: 'Times New Roman', Times, serif;  ">Furniture Store Catalog</h1>
+        <h3 style="display:flex;justify-content: center;">Find the best furniture for your home</h3>
+        <div class="project">
+            <div style="border: 2px solid;" class="sofa">
+                <img src="https://m.media-amazon.com/images/I/71VxlR9p6GL._SL1500_.jpg" alt="">
+                <h2>Sofa</h2>
+                <p>Comfortable and Style Sofa</p>
+                <p>$499</p>
+                <button>Buy Now</button>
+            </div>
+                   <div style="border: 2px solid;" class="sofa">
+                <img src="https://m.media-amazon.com/images/I/91eh6CYZxJL.jpg" alt="">
+                <h2>Dinning Table</h2>
+                <p>Wodden Dinning Table</p>
+                <p>$299</p>
+                <button>Buy Now</button>
+            </div>
+                   <div style="border: 2px solid;" class="sofa">
+                <img src="https://i.pinimg.com/originals/15/d0/e7/15d0e76f924f9d95c7f7fc20425f3d98.jpg" alt="">
+                <h2>Chair</h2>
+                <p>Modern Chair for any Room</p>
+                <p>$149</p>
+                <button>Buy Now</button>
+            </div>
+            </div>
+    </div>
+</body>
+</html>
