@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Share Market Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar {
+      background-color: #2c3e50;
+    }
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .footer {
+      text-align: center;
+      padding: 15px 0;
+      color: #888;
+      font-size: 14px;
+    }
+    .positive {
+      color: green;
+    }
+    .negative {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Share Market</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Market Trends</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Top Gainers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Top Losers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container my-5">
+
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Top Gainer</h5>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="AAPL" width="40">
+            <p class="mb-1">AAPL</p>
+            <p>$150.00</p>
+            <p class="positive">+2.15%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Top Loser</h5>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="GOOG" width="40">
+            <p class="mb-1">GOOG</p>
+            <p>$2,800.00</p>
+            <p class="negative">-1.05%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Most Active</h5>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="AMZN" width="60">
+            <p class="mb-1">AMZN</p>
+            <p>5,000,000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Trending Stocks
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between">
+              <span>AAPL</span> <span class="positive">+2.15%</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>MSFT</span> <span class="positive">+1.25%</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>TSLA</span> <span class="negative">-0.75%</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>FB</span> <span class="positive">+0.80%</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Market Summary
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              The share market has been performing positively, with major indices showing an upward trend.
+              Investors are optimistic about the economic recovery and corporate earnings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="footer bg-light">
+    Data for educational purposes only — Share Market 2025
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
