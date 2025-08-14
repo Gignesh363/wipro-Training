@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IIFE Product Inventory (User Input)</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    .container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 350px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin: auto;
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    input, button {
+        padding: 8px;
+        margin: 5px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    button {
+        cursor: pointer;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+    button:hover {
+        background: #0056b3;
+    }
+    #log {
+        margin-top: 15px;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 10px;
+        min-height: 100px;
+        border-radius: 5px;
+        font-family: monospace;
+    }
+    .log-add {
+        color: green;
+    }
+    .log-sell {
+        color: blue;
+    }
+    .log-error {
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🛒 Product Inventory</h2>
+
+    <input type="number" id="addQty" placeholder="Enter quantity to add">
+    <button onclick="addStockHandler()">Add Stock</button>
+
+    <input type="number" id="sellQty" placeholder="Enter quantity to sell">
+    <button onclick="sellStockHandler()">Sell Stock</button>
+
+    <button onclick="showStockHandler()">Show Current Stock</button>
+    <button style="background:#dc3545;" onclick="clearLog()">Clear Log</button>
+
+    <div id="log"></div>
+</div>
+
+<script>
+// IIFE for Product Inventory Management
+const productInventory = (function () {
+    let stock = 0; // private variable
+
+    function getStock() {
+        return stock;
+    }
+
+    function addStock(quantity) {
+        stock += quantity;
+        logMessage(`Stock after adding: ${stock}`, "log-add");
+    }
+
+    function sell(quantity) {
+        if (quantity <= stock) {
+            stock -= quantity;
+            logMessage(`Sold ${quantity} items.`, "log-sell");
+        } else {
+            logMessage("Insufficient stock", "log-error");
+        }
+    }
+
+    return {
+        getStock,
+        addStock,
+        sell
+    };
+})();
+
+// Helper to log messages
+function logMessage(message, className) {
+    const logDiv = document.getElementById("log");
+    const msg = document.createElement("div");
+    msg.className = className;
+    msg.textContent = message;
+    logDiv.appendChild(msg);
+    logDiv.scrollTop = logDiv.scrollHeight;
+}
+
+// Event Handlers
+function addStockHandler() {
+    const qty = parseInt(document.getElementById("addQty").value);
+    if (qty > 0) {
+        productInventory.addStock(qty);
+    } else {
+        logMessage("Please enter a valid quantity to add.", "log-error");
+    }
+    document.getElementById("addQty").value = "";
+}
+
+function sellStockHandler() {
+    const qty = parseInt(document.getElementById("sellQty").value);
+    if (qty > 0) {
+        productInventory.sell(qty);
+    } else {
+        logMessage("Please enter a valid quantity to sell.", "log-error");
+    }
+    document.getElementById("sellQty").value = "";
+}
+
+function showStockHandler() {
+    logMessage(`Stock remaining: ${productInventory.getStock()}`, "log-sell");
+}
+
+function clearLog() {
+    document.getElementById("log").innerHTML = "";
+}
+</script>
+
+</body>
+</html>

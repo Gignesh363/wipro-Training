@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #fff;
+        }
+        p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .player {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    const player1 = {
+        name: "Virat Kohli",
+        age: 36,
+        sport: "Cricket",
+        stats: {
+            matches: 500,
+            runs: 25000,
+            average: 57.2
+        }
+    };
+
+    const player2 = {
+        name: "Rohit Sharma",
+        age: 38,
+        sport: "Cricket",
+        stats: {
+            matches: 450,
+            runs: 18000,
+            average: 45.8
+        }
+    };
+
+    const players = [player1, player2];
+
+    for (const { name, sport, stats: { matches, runs, average } } of players) {
+        document.write(`<div class="player">`);
+        document.write(`<p>Player ${name} plays ${sport}.</p>`);
+        document.write(`<p>Matches: ${matches} | Runs: ${runs} | Batting Average: ${average}</p>`);
+        document.write(`</div>`);
+    }
+</script>
+
+</body>
+</html>
