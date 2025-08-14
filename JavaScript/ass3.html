@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Equality & Inequality Checker</title>
+</head>
+<body>
+  <script>
+  
+    const val1 = prompt("Enter the first value:");
+    const val2 = prompt("Enter the second value:");
+
+
+    const type1 = typeof val1;
+    const type2 = typeof val2;
+
+  
+    const val2Number = Number(val2);
+    const type2Converted = typeof val2Number;
+
+    const looseEquality = val1 == val2Number;      // == (with coercion)
+    const strictEquality = val1 === val2Number;    // === (no coercion)
+    const looseInequality = val1 != val2Number;    // !=
+    const strictInequality = val1 !== val2Number;  // !==
+
+
+    const output = `
+First Value: ${val1} (${type1})
+Second Value: ${val2Number} (${type2Converted})
+
+Using == : ${looseEquality} → Equality ignores type
+Using === : ${strictEquality} → Strict equality checks type too
+Using != : ${looseInequality} → Values considered equal
+Using !== : ${strictInequality} → Strict inequality because types differ
+    `;
+
+
+    alert(output);
+  </script>
+</body>
+</html>

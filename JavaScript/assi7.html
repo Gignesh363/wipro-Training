@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sports Team Player Details</title>
+</head>
+<body>
+  <h2>Open the browser console to see the output</h2>
+  <script>
+    const player1 = {
+      name: "Virat Kohli",
+      age: 36,
+      sport: "Cricket",
+      stats: {
+        matches: 500,
+        runs: 25000,
+        average: 57.2
+      }
+    };
+
+    const player2 = {
+      name: "Lionel Messi",
+      age: 37,
+      sport: "Football",
+      stats: {
+        matches: 800,
+        goals: 720,
+        assists: 300
+      }
+    };
+
+   
+    const players = [player1, player2];
+
+    for (const player of players) {
+      const { name, sport, stats } = player;
+
+      if (sport === "Cricket") {
+        const { matches, runs, average } = stats;
+        console.log(`Player ${name} plays ${sport}.`);
+        console.log(`Matches: ${matches} | Runs: ${runs} | Batting Average: ${average}`);
+      } else if (sport === "Football") {
+        const { matches, goals, assists } = stats;
+        console.log(`\nPlayer ${name} plays ${sport}.`);
+        console.log(`Matches: ${matches} | Goals: ${goals} | Assists: ${assists}`);
+      }
+    }
+  </script>
+</body>
+</html>
